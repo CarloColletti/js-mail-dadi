@@ -20,14 +20,14 @@ button_submit.addEventListener('click',
 
     function () {
         // inserisco l'email 
-        // const emailInput = document.getElementById("email-not-validate");
-        let emailInput = prompt('Inserisci la tua email');
+        const emailInput = document.getElementById("email-not-validate");
+        // let emailInput = prompt('Inserisci la tua email');
         
         let verifica = false;
         // controlla tutte le email della lista 
         for (let i = 0; i < valid_email.length; i++) {
             // verifica se è presente nella lista 
-            if (emailInput == valid_email[i]) {
+            if (emailInput.value == valid_email[i]) {
                 verifica = true;
                 
             }
