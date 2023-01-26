@@ -5,22 +5,48 @@
 
 // creo la lista delle email 
 const valid_email = [
-    "carlocolletti@gmailcom",
+    "carlocolletti@gmail.com",
     "marcocolletti@gmail.com",
     "marcopolopolo32@gmail.com",
     "paolocaronte@outlook.it",
-    "vincenzosiberiani@libero.it", 
+    "vincenzosiberiani@libero.it",
 ]
 
-const user = prompt('inserisci la tua email:');
-console.log('user')
+// collego il bottone per la richiesta 
+const button_submit = document.getElementById("button_submit")
+
+// evento 
+button_submit.addEventListener('click',
+
+    function () {
+        // inserisco l'email 
+        // const emailInput = document.getElementById("email-not-validate");
+        let emailInput = prompt('Inserisci la tua email');
+        
+        let verifica = false;
+        // controlla tutte le email della lista 
+        for (let i = 0; i < valid_email.length; i++) {
+            // verifica se è presente nella lista 
+            if (emailInput == valid_email[i]) {
+                verifica = true;
+                
+            }
+        }
+        // se è presente accede 
+        if (verifica == true) {
+            console.log('la tua email è stata verificata con successo');
+            document.getElementById("result").innerHTML = "la tua email è stata verificata con successo";
+        }
+        // altrimenti accesso negato 
+        else {
+            console.log('la tua email non è autorizzata');
+            document.getElementById("result").innerHTML = "la tua email non è autorizzata";
+        }
+       
+
+    }
+)
 
 
-for (let i = 0; i <= valid_email.length; i++) {
-    if (user == valid_email[i]) {
-        alert("si")
-    }
-    else{
-        alert("no")
-    }
-}
+
+
